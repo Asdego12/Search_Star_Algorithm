@@ -23,7 +23,7 @@ WINDOW_SIZE = [600, 430]
 screen = pygame.display.set_mode(WINDOW_SIZE)
 # Font size
 font = pygame.font.SysFont('Calibri', 20, bold=1)
-pygame.display.set_caption("CSW AI (21011640)")
+pygame.display.set_caption("A* Search Algorithm")
 
 # Loop until close button clicked
 done = False
