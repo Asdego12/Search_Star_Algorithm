@@ -1,0 +1,13 @@
+Imagine a board. This board itself consists of two types of tiles, those which are considered “walkable”, and those that form the walls of a maze. Wall tiles are obstacles, meaning they cannot be walked or jumped over. The player is allowed to move up, down, left, right and needs to find the fastest way to get from start tile to the end tile. But what if we don’t need a player? What if it was possible to find the most optimal path using an algorithm? This is where A* search algorithm comes into play. 
+
+A-star search algorithm (A*) has been widely used in pathfinding, as it detects the fastest way from node A to node B. Using heuristics, it decides what path to take next as it moves from one node (tile) to another. This type of function is bound to find the most cost-efficient way from start node to target node. The algorithm combines the real cost from the starting node (g(n)) with the estimated cost of the target node (h(n)) and evaluates the next node based on this computation.
+Heuristics can vary, with most popular ones using Euclidean and Manhattan distance. It is important for heuristics to underestimate the total path as the opposite would result in the algorithm searching for an alternate, potentially longer route towards the destination. Euclidean distance is specifically efficient at this and was used in this project to estimate the fastest path to the target node. Euclidean distance uses Pythagorean theorem to calculate the diagonal distance between two points. 
+The formula is as follows: 
+
+d = √[ (x22 – x11)2 + (y22 – y11)2]
+
+
+There are 3 classes in total. "Search" class holds a basic prototype and idea; "MySearchStar" class was created to hold the value for current position on the board, parent and neighbour values (to link the path tiles and to check neighbouring tiles). The cost values were defined as “g”, “h” and “f”. G value represents the total cost of the journey from the start node, h stands for heuristics- distance from current node till the target, and finally, f finds the lowest cost from a neighbouring node.
+Moreover, a path function and two types of lists were defined. The path function is used to output the optimal route found by the algorithm (from start till finish). This was done by accumulating the last nodes and appending them into the path array. "Available" list was used to let the algorithm know where it can go, while the "visited" list kept track of the tiles the algorithm has been to.
+To further optimize the algorithm, moves were defined as per specification, meaning that the algorithm can move one tile at a time in four different positions (up, down, left, right); Main class holds the board (maze) and visually displays the solution.
+
